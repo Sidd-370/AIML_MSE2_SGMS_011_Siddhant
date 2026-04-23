@@ -1,0 +1,175 @@
+/* ===== RESET ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ===== BODY ===== */
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: linear-gradient(to right, #eef2f3, #dfe9f3);
+}
+
+/* ===== NAVBAR ===== */
+.navbar {
+  background: #1e293b;
+  color: white;
+  padding: 15px 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar h3 {
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.navbar a {
+  color: #e2e8f0;
+  text-decoration: none;
+  margin-left: 20px;
+  font-size: 14px;
+}
+
+.navbar a:hover {
+  color: white;
+}
+
+/* Logout button */
+.navbar button {
+  margin-left: 15px;
+  padding: 6px 12px;
+  background: #ef4444;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+}
+
+.navbar button:hover {
+  background: #dc2626;
+}
+
+/* ===== FORM BOX ===== */
+.container {
+  width: 340px;
+  margin: 70px auto;
+  background: white;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+  transition: 0.3s;
+}
+
+.container:hover {
+  transform: translateY(-3px);
+}
+
+/* Title */
+.container h2 {
+  text-align: center;
+  margin-bottom: 15px;
+  color: #1e293b;
+}
+
+/* ===== INPUTS ===== */
+input, select {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  outline: none;
+  transition: 0.2s;
+}
+
+input:focus, select:focus {
+  border-color: #3b82f6;
+}
+
+/* ===== BUTTON ===== */
+button {
+  width: 100%;
+  padding: 10px;
+  background: linear-gradient(to right, #3b82f6, #2563eb);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+button:hover {
+  transform: scale(1.03);
+  background: linear-gradient(to right, #2563eb, #1d4ed8);
+}
+
+/* ===== DASHBOARD ===== */
+.dashboard {
+  padding: 30px;
+  text-align: center;
+}
+
+.dashboard h2 {
+  margin-bottom: 20px;
+  color: #1e293b;
+}
+
+/* ===== SEARCH ===== */
+.search-box {
+  width: 400px;
+  margin: 10px auto;
+  display: flex;
+  gap: 8px;
+}
+
+.search-box input {
+  flex: 1;
+}
+
+/* ===== CARDS ===== */
+.card {
+  background: white;
+  width: 400px;
+  margin: 15px auto;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  text-align: left;
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+}
+
+/* Card text */
+.card h4 {
+  color: #1e293b;
+  margin-bottom: 5px;
+}
+
+.card p {
+  margin: 5px 0;
+  color: #475569;
+}
+
+/* Card buttons */
+.card button {
+  width: auto;
+  margin-right: 8px;
+  padding: 6px 12px;
+  font-size: 13px;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 500px) {
+  .container,
+  .card,
+  .search-box {
+    width: 90%;
+  }
+}
