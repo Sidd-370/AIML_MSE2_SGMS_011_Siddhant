@@ -1,43 +1,85 @@
+// app.use(cors(...));
+// app.use(express.json());
+// import express from "express";
+// import dotenv from "dotenv";
+// import cors from "cors";
+
+// // DB
+// import connectDB from "./config/db.js";
+
+// // Routes
+// import authRoutes from "./routes/authRoutes.js";
+// import grievanceRoutes from "./routes/grievanceRoutes.js";
+// import cors from "cors";
+
+// app.use(cors({
+//   origin: "*",
+//   methods: ["GET", "POST", "PUT", "DELETE"],
+//   credentials: true
+// }));
+
+
+// dotenv.config();
+
+// const app = express();
+
+// // Middleware
+// app.use(cors());
+// app.use(express.json());
+
+// // Connect Database
+// connectDB();
+
+// // Routes
+// app.use("/api", authRoutes);
+// app.use("/api", grievanceRoutes);
+
+// // Test Route (optional)
+// app.get("/", (req, res) => {
+//   res.send("API Running...");
+// });
+
+// // Start Server
+// const PORT = process.env.PORT || 5000;
+
+// app.listen(PORT, () => {
+//   console.log(`Server running on port ${PORT}`);
+// });
+
+
+
 import express from "express";
 import dotenv from "dotenv";
 import cors from "cors";
 
-// DB
 import connectDB from "./config/db.js";
-
-// Routes
 import authRoutes from "./routes/authRoutes.js";
 import grievanceRoutes from "./routes/grievanceRoutes.js";
-import cors from "cors";
-
-app.use(cors({
-  origin: "*",
-  methods: ["GET", "POST", "PUT", "DELETE"],
-  credentials: true
-}));
-
 
 dotenv.config();
+connectDB();
 
 const app = express();
 
-// Middleware
-app.use(cors());
+/* ✅ CORS FIX (IMPORTANT) */
+app.use(cors({
+  origin: "http://localhost:5173",  // frontend
+  methods: ["GET", "POST", "PUT", "DELETE"],
+}));
+
+/* middleware */
 app.use(express.json());
 
-// Connect Database
-connectDB();
-
-// Routes
+/* routes */
 app.use("/api", authRoutes);
 app.use("/api", grievanceRoutes);
 
-// Test Route (optional)
+/* test route */
 app.get("/", (req, res) => {
   res.send("API Running...");
 });
 
-// Start Server
+/* server */
 const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, () => {
