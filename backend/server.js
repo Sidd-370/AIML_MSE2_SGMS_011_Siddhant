@@ -8,6 +8,14 @@ import connectDB from "./config/db.js";
 // Routes
 import authRoutes from "./routes/authRoutes.js";
 import grievanceRoutes from "./routes/grievanceRoutes.js";
+import cors from "cors";
+
+app.use(cors({
+  origin: "*",
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  credentials: true
+}));
+
 
 dotenv.config();
 
